@@ -1,27 +1,25 @@
-import React, { useEffect, useRef } from "react";
-import { init } from "@waline/client";
-import "@waline/client/style";
-import styles from "./styles.module.css";
+import React from "react";
+import Giscus from "@giscus/react";
 
 export const Comments = (props) => {
-  const walineInstanceRef = useRef();
-  const containerRef = React.createRef();
-
-  useEffect(() => {
-    walineInstanceRef.current = init({
-      ...props,
-      el: containerRef.current,
-      serverURL: "https://gold-arch-docs-comments.vercel.app",
-    });
-
-    return () => walineInstanceRef.current?.destroy();
-  }, []);
-
-  useEffect(() => {
-    walineInstanceRef.current?.update(props);
-  }, props);
-
-  return <div className={styles.commentsContainer} ref={containerRef} />;
+  return (
+    <Giscus
+      repo="Cyronlee/Gold-Arch-Docs"
+      repoId="R_kgDOLC6SWQ"
+      category="General"
+      categoryId="DIC_kwDOLC6SWc4Ccf8_"
+      mapping="pathname"
+      strict="0"
+      reactionsEnabled="1"
+      emitMetadata="0"
+      inputPosition="top"
+      theme="light_tritanopia"
+      lang="zh-CN"
+      loading="lazy"
+      crossorigin="anonymous"
+      async
+    />
+  );
 };
 
 export default Comments;

@@ -54,7 +54,9 @@ export default function DocItemLayout({ children }) {
             <DocItemFooter />
           </article>
           <DocItemPaginator />
-          <Comments></Comments>
+          <div style={{ marginTop: "24px" }}>
+            <Comments />
+          </div>
         </div>
       </div>
       {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
