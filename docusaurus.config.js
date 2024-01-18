@@ -80,11 +80,17 @@ const config = {
           },
           {
             type: "docSidebar",
-            sidebarId: "tutorialSidebar",
             position: "left",
-            label: "Docusaurus编辑教程",
+            sidebarId: "practiceSidebar",
+            label: "最佳实践",
           },
           { to: "/blog", label: "文章", position: "left" },
+          {
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "right",
+            label: "Docusaurus编辑教程",
+          },
           {
             href: "https://github.com/Cyronlee/Gold-Arch-Docs",
             label: "GitHub",
